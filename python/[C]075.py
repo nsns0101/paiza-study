@@ -23,7 +23,6 @@ for i in range(len(value)):
             value[j] += input_line3[i]
         point[i] -= input_line3[i] + (input_line3[i] / 10)
 
-
 for i in range(len(value)):
     print(value[i], int(point[i]) )
 
