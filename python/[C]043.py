@@ -12,6 +12,8 @@ count = []
 for i in range(0, len(list(set(player)))):
     count.append(0)
 print(count)
+
+# 갯수찾기
 for i in range(0, len(arr)):
     for j in range(0, number):
         if(arr[i] == player[j]):
