@@ -5,50 +5,25 @@ player = list(input().split(" "))
 # print(number)
 # print(player)
 
-arr = []
-temp = 0
-count = [0]
-# temp_count = 0
-for i in range(0, number):
-    temp = 0
+arr = list(set(player))
+count = []
 
-    # 첫 생성시
-    if(len(arr) == 0):
-        arr.append(player[i])
-        continue    
-
-    for j in range(0, len(arr)):
-        # player가 arr에 없으면 없다는 카운트 ++
-        if(player[i] != arr[j]):
-            # print("없는 숫자")
-            temp += 1
-        else:
-            # print("이미 있는 숫자")
-            break
-        # print(temp)
-
-
-    if(temp == len(arr)):
-        # print(temp, len(arr))
-        arr.append(player[i])
-        count.append(0)
-# print(arr)      
-# print(count)
-
-good = 0
-
+#중복 제거한 플레이어를 제거한 배열길이 만큼 count배열을 만들어줌
+for i in range(0, len(list(set(player)))):
+    count.append(0)
+print(count)
 for i in range(0, len(arr)):
     for j in range(0, number):
         if(arr[i] == player[j]):
             count[i] +=1
-# print(max(count))
+# print(arr)
+# print((count))
 
 result = []
-for i in range(0, len(arr)):
+for i in range(0, len(count)):
     if(count[i] == max(count)):
         result.append(arr[i])
 
-result.sort()
-# result.reverse()
+result.sort()   #오름차순
 print(' '.join(result))
 
