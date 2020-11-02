@@ -16,7 +16,7 @@ for i in range(0, N):
 
     #분 단위로 바꾸기
     h[i] = h[i][0] * 60 + h[i][1] * 1
-# print(h)
+print(h)
 
 result = ""
 
