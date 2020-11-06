@@ -1,10 +1,7 @@
-package jp.gr.paiza;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
-// A005:パイザボウルゲーム
-public class A005Main {
+public class Main {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
