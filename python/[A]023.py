@@ -4,9 +4,6 @@ day_length = int(input())
 day = input().split(" ")
 day = list(map(int, day))
 
-# for i in range (len(day), 14):
-#     day.append(1)
-# print(day)
 good = 0
 result_count = 0
 for i in range(0, day_length):
@@ -14,14 +11,6 @@ for i in range(0, day_length):
     count = 0
     # end_start_count = 0
     for j in range(0, 7):
-
-        # if(i + j == 0):
-        #     print("시작")
-        #     end_start_count+=1
-        # elif(i + j == day_length - 1):
-        #     print("끝")
-        #     end_start_count+=1
-
 
         if(i + j >= day_length):
             # good = i + j - 14

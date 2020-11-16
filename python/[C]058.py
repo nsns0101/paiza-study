@@ -33,11 +33,6 @@ while i < str_length:
         i = 0
         # print("good")
 
-    # print(i, str_length, complated_count)
-    # if str_length - 1 == i and str_length != complated_count:
-    #     temp_count+=1
-    #     # print("temp++")
-
     # print(str_length, complated_count)
     if(str_length== complated_count):
         print(temp_arr[temp_count])

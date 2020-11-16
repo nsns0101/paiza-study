@@ -1,5 +1,4 @@
 # N 각 영수증의 수
-# 
 N = int(input())
 
 input_value = []

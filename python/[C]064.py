@@ -31,9 +31,6 @@ for i in range(0, N):
         value += int(food_kcal[j] * (N_kcal[i][j] / 100))
     result.append(value)
 
-# print(result)
-# print(food_kcal)
-# print(N_kcal)
 
 for i in range(0, len(result)):
     print(result[i])
