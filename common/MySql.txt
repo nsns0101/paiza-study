@@ -1,0 +1,47 @@
+﻿테이블 1(EMP)                  
+DEPTNO   EMPNO   ENAME         
+A              AAB        111           
+B              AAC        123           
+C              AAB        111          
+D              ABC        222
+E              BCD        135
+
+테이블 2(DEPT)
+DEPTNO   DNAME
+A              'Hi'
+B              'This is'
+C              'Test Table'
+
+1. inner join(내부 조인)    => 교집합과 비슷
+    - join 조건에서 동일한 값이 있는 행만을 반환하는 조인
+    - ON 조건절을 필수적으로 사용
+    EX ) SELECT EMP.DEPTNO, EMPNO, ENAME, DNAME   (1)
+            FROM EMP (INNER) JOIN DEPT               (2)
+            ON EMP.DEPTNO = DEPT.DEPTNO              (3)
+
+            1) 두 테이블의 컬럼명이 겹치지 않을 경우 테이블.컬럼명으로 작성하지 않아도 됨
+            2) inner join은 default값이므로 inner은 생략 가능
+            3) SELECT와 달리, 컬럼명이 다르더라도 명확하게 테이블 명과 같은 접두사를 사용해야 함
+        결과)
+            EMP.DEPTNO   EMPNO   ENAME   DNAME
+            A            AAB     111     'Hi'
+            B            AAC     123     'This is'
+            C            ABA     111     'Test Table'
+
+
+2. outer join(외부 조인)    => 기준열에 따른 합집합
+    - 두 테이블을 조인하되, Table1에는 있고 Table2에는 없는 데이터가 있으면 그 값을 NULL로 출력
+    EX ) SELECT EMP.DEPTNO, EMPNO, ENAME, DNAME   
+            FROM EMP LEFT (OUTER) JOIN DEPT               (1)
+            ON EMP.DEPTNO = DEPT.DEPTNO              
+
+            1) LEFT, RIGHT JOIN이 가능한 경우는 OUTER JOIN밖에 없으므로 OUTER은 생략 가능
+               LEFT, RIGHT는 기준테이블에 따라 작성
+            
+        결과)
+            EMP.DEPTNO   EMPNO   ENAME   DNAME
+            A                     AAB         111        'Hi'
+            B                     AAC         123         'This is'
+            C                     ABA         111         'Test Table'
+            D                     ABC         222         NULL   
+            E                     BCD         135         NULL
