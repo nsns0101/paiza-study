@@ -17,7 +17,7 @@ public class a{
         else{
             answer = s.substring( (s.length() / 2), (s.length() / 2) + 1);
         }
-        return "abcdeㄹ".substring(1,3);
+        return answer;
     }
 
     public static void main(String[] args){
